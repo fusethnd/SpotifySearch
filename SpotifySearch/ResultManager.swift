@@ -16,10 +16,10 @@ struct TrackList: Decodable {
 }
 
 struct TrackItem: Decodable {
-    let external_urls: ExternalURLs
+    let uri: String  // Adding the uri field
+    // let external_urls: ExternalURLs
 }
 
-struct ExternalURLs: Decodable {
-    let spotify: String
-}
-
+//struct ExternalURLs: Decodable {
+//    let spotify: String
+//}

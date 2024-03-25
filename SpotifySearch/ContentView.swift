@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var viewModel = TrackViewModel()
+    @StateObject var viewModel = ResultViewModel()
     @State private var keyword = ""
     @State private var selectedType = "track"  // Assuming you're searching for tracks
 
@@ -25,11 +25,11 @@ struct ContentView: View {
 
             if viewModel.isLoading {
                 ProgressView()
-            } else if viewModel.trackURLs.isEmpty {
+            } else if viewModel.trackURIs.isEmpty {
                 Text(viewModel.message)
             } else {
-                List(viewModel.trackURLs, id: \.self) { url in
-                    Text(url)
+                List(viewModel.trackURIs, id: \.self) { uri in
+                    Text(uri)
                 }
             }
         }

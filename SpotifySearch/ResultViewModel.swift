@@ -8,7 +8,8 @@
 import Foundation
 
 class ResultViewModel: ObservableObject {
-    @Published var trackURLs: [String] = []
+    // @Published var trackURLs: [String] = []
+    @Published var trackURIs: [String] = [] // URL -> URI
     @Published var isLoading = false
     @Published var message = ""
 
@@ -57,8 +58,8 @@ class ResultViewModel: ObservableObject {
             do {
                 let decodedData = try JSONDecoder().decode(TracksResponse.self, from: data)
                 DispatchQueue.main.async {
-                    self?.trackURLs = decodedData.tracks.items.map { $0.external_urls.spotify }
-                    if self?.trackURLs.isEmpty ?? true {
+                    self?.trackURIs = decodedData.tracks.items.map { $0.uri } // { $0.external_urls.spotify }
+                    if self?.trackURIs.isEmpty ?? true {
                         self?.message = "No results found."
                     }
                 }
