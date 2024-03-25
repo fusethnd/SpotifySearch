@@ -14,10 +14,8 @@
 		A93CDA2C2BA33B25001F84DE /* SpotifySearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93CDA2B2BA33B25001F84DE /* SpotifySearchTests.swift */; };
 		A93CDA362BA33B25001F84DE /* SpotifySearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93CDA352BA33B25001F84DE /* SpotifySearchUITests.swift */; };
 		A93CDA382BA33B25001F84DE /* SpotifySearchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93CDA372BA33B25001F84DE /* SpotifySearchUITestsLaunchTests.swift */; };
-		A93CDA452BA33B4D001F84DE /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93CDA442BA33B4D001F84DE /* ModelData.swift */; };
-		A93CDA472BA33B6A001F84DE /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93CDA462BA33B6A001F84DE /* SearchManager.swift */; };
 		A93CDA492BA33B83001F84DE /* ResultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93CDA482BA33B83001F84DE /* ResultManager.swift */; };
-		A93CDA4D2BA340BF001F84DE /* TrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93CDA4C2BA340BF001F84DE /* TrackViewModel.swift */; };
+		A93CDA4D2BA340BF001F84DE /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93CDA4C2BA340BF001F84DE /* ResultViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,10 +46,8 @@
 		A93CDA312BA33B25001F84DE /* SpotifySearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotifySearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A93CDA352BA33B25001F84DE /* SpotifySearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifySearchUITests.swift; sourceTree = "<group>"; };
 		A93CDA372BA33B25001F84DE /* SpotifySearchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifySearchUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		A93CDA442BA33B4D001F84DE /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
-		A93CDA462BA33B6A001F84DE /* SearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchManager.swift; sourceTree = "<group>"; };
 		A93CDA482BA33B83001F84DE /* ResultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultManager.swift; sourceTree = "<group>"; };
-		A93CDA4C2BA340BF001F84DE /* TrackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewModel.swift; sourceTree = "<group>"; };
+		A93CDA4C2BA340BF001F84DE /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,10 +100,8 @@
 			children = (
 				A93CDA1A2BA33B23001F84DE /* SpotifySearchApp.swift */,
 				A93CDA1C2BA33B23001F84DE /* ContentView.swift */,
-				A93CDA442BA33B4D001F84DE /* ModelData.swift */,
-				A93CDA462BA33B6A001F84DE /* SearchManager.swift */,
 				A93CDA482BA33B83001F84DE /* ResultManager.swift */,
-				A93CDA4C2BA340BF001F84DE /* TrackViewModel.swift */,
+				A93CDA4C2BA340BF001F84DE /* ResultViewModel.swift */,
 				A93CDA1E2BA33B25001F84DE /* Assets.xcassets */,
 				A93CDA202BA33B25001F84DE /* Preview Content */,
 			);
@@ -269,11 +263,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A93CDA4D2BA340BF001F84DE /* TrackViewModel.swift in Sources */,
+				A93CDA4D2BA340BF001F84DE /* ResultViewModel.swift in Sources */,
 				A93CDA1D2BA33B23001F84DE /* ContentView.swift in Sources */,
 				A93CDA1B2BA33B23001F84DE /* SpotifySearchApp.swift in Sources */,
-				A93CDA452BA33B4D001F84DE /* ModelData.swift in Sources */,
-				A93CDA472BA33B6A001F84DE /* SearchManager.swift in Sources */,
 				A93CDA492BA33B83001F84DE /* ResultManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

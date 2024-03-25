@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TrackViewModel: ObservableObject {
+class ResultViewModel: ObservableObject {
     @Published var trackURLs: [String] = []
     @Published var isLoading = false
     @Published var message = ""
