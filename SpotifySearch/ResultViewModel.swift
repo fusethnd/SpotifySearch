@@ -10,6 +10,7 @@ import Foundation
 class ResultViewModel: ObservableObject {
     // @Published var trackURLs: [String] = []
     @Published var trackURIs: [String] = [] // URL -> URI
+    @Published var firstTrackURI = ""
     @Published var isLoading = false
     @Published var message = ""
 
@@ -59,15 +60,21 @@ class ResultViewModel: ObservableObject {
                 let decodedData = try JSONDecoder().decode(TracksResponse.self, from: data)
                 DispatchQueue.main.async {
                     self?.trackURIs = decodedData.tracks.items.map { $0.uri } // { $0.external_urls.spotify }
-                    if self?.trackURIs.isEmpty ?? true {
+                    if let firstURI = self?.trackURIs.first {
+                        print("First track URI: \(firstURI)") // Print the first track URI
+                        self?.firstTrackURI = firstURI // Also store it in firstTrackURI
+                    } else {
                         self?.message = "No results found."
+                        print("No track URIs found.")
                     }
+                    print("Track URIs: \(self?.trackURIs ?? [])") // Print the track URIs
                 }
             } catch {
                 DispatchQueue.main.async {
                     self?.message = "Decoding error: \(error.localizedDescription)"
                 }
             }
+            
         }.resume()
     }
 }

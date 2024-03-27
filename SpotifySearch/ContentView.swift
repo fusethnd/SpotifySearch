@@ -28,9 +28,10 @@ struct ContentView: View {
             } else if viewModel.trackURIs.isEmpty {
                 Text(viewModel.message)
             } else {
-                List(viewModel.trackURIs, id: \.self) { uri in
-                    Text(uri)
-                }
+//                List(viewModel.trackURIs, id: \.self) { uri in
+//                    Text(uri)
+//                }
+                Text(viewModel.firstTrackURI)
             }
         }
     }
