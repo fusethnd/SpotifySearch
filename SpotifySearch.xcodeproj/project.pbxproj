@@ -16,6 +16,7 @@
 		A93CDA382BA33B25001F84DE /* SpotifySearchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93CDA372BA33B25001F84DE /* SpotifySearchUITestsLaunchTests.swift */; };
 		A93CDA492BA33B83001F84DE /* ResultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93CDA482BA33B83001F84DE /* ResultManager.swift */; };
 		A93CDA4D2BA340BF001F84DE /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93CDA4C2BA340BF001F84DE /* ResultViewModel.swift */; };
+		A9844AE82BB55B93006D517B /* TrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9844AE72BB55B93006D517B /* TrackViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		A93CDA372BA33B25001F84DE /* SpotifySearchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifySearchUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A93CDA482BA33B83001F84DE /* ResultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultManager.swift; sourceTree = "<group>"; };
 		A93CDA4C2BA340BF001F84DE /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
+		A9844AE72BB55B93006D517B /* TrackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				A93CDA1A2BA33B23001F84DE /* SpotifySearchApp.swift */,
+				A9844AE72BB55B93006D517B /* TrackViewModel.swift */,
 				A93CDA1C2BA33B23001F84DE /* ContentView.swift */,
 				A93CDA482BA33B83001F84DE /* ResultManager.swift */,
 				A93CDA4C2BA340BF001F84DE /* ResultViewModel.swift */,
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A93CDA4D2BA340BF001F84DE /* ResultViewModel.swift in Sources */,
+				A9844AE82BB55B93006D517B /* TrackViewModel.swift in Sources */,
 				A93CDA1D2BA33B23001F84DE /* ContentView.swift in Sources */,
 				A93CDA1B2BA33B23001F84DE /* SpotifySearchApp.swift in Sources */,
 				A93CDA492BA33B83001F84DE /* ResultManager.swift in Sources */,

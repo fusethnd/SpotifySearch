@@ -12,6 +12,10 @@ struct ContentView: View {
     @State private var keyword = ""
     @State private var selectedType = "track"  // Assuming you're searching for tracks
 
+    @StateObject var trackViewModel = TrackViewModel()
+    // @StateObject var trackViewModel = [:]
+    // Dictionary to hold view models for each URI
+
     var body: some View {
         VStack {
             TextField("Keyword", text: $keyword)
@@ -28,10 +32,19 @@ struct ContentView: View {
             } else if viewModel.trackURIs.isEmpty {
                 Text(viewModel.message)
             } else {
-//                List(viewModel.trackURIs, id: \.self) { uri in
-//                    Text(uri)
-//                }
                 Text(viewModel.firstTrackURI)
+                // Get url p.... by Spotify api
+                // use firstTrackURI as input and get url p.... by Spotify api
+                VStack {
+                    Button(action: {
+                        trackViewModel.togglePlayPause()
+                    }) {
+                        Image(systemName: trackViewModel.isPlaying ? "pause.circle.fill" : "play.circle.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 50, height: 50)
+                    }
+                }
             }
         }
     }
