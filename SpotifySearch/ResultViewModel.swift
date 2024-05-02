@@ -9,8 +9,9 @@ import Foundation
 
 class ResultViewModel: ObservableObject {
     // @Published var trackURLs: [String] = []
-    @Published var trackURIs: [String] = [] // URL -> URI
-    @Published var firstTrackURI = ""
+//    @Published var trackID: [String] = []
+    @Published var result: [TrackItem] = []
+//    @Published var firstTrackURI = ""
     @Published var isLoading = false
     @Published var message = ""
 
@@ -55,25 +56,48 @@ class ResultViewModel: ObservableObject {
                 }
                 return
             }
-
+            let jsonStr = String(data: data, encoding: .utf8)
+            print("Received JSON string:\n\(jsonStr ?? "Invalid JSON")")
+            
+            // Get 20 Track version
             do {
+                // Get TrackID
                 let decodedData = try JSONDecoder().decode(TracksResponse.self, from: data)
                 DispatchQueue.main.async {
-                    self?.trackURIs = decodedData.tracks.items.map { $0.uri } // { $0.external_urls.spotify }
-                    if let firstURI = self?.trackURIs.first {
-                        print("First track URI: \(firstURI)") // Print the first track URI
-                        self?.firstTrackURI = firstURI // Also store it in firstTrackURI
-                    } else {
+                    self?.result = decodedData.tracks.items
+                    if self?.result.isEmpty ?? true {
                         self?.message = "No results found."
-                        print("No track URIs found.")
                     }
-                    print("Track URIs: \(self?.trackURIs ?? [])") // Print the track URIs
+                    // self?.trackID = decodedData.tracks.items.map { $0.id }
+                    // if self?.trackID.isEmpty ?? true {
+                    //    self?.message = "No results found."
+                    // }
                 }
             } catch {
                 DispatchQueue.main.async {
                     self?.message = "Decoding error: \(error.localizedDescription)"
                 }
             }
+            
+            // Get the only first one version
+//            do {
+//                let decodedData = try JSONDecoder().decode(TracksResponse.self, from: data)
+//                DispatchQueue.main.async {
+//                    self?.trackURIs = decodedData.tracks.items.map { $0.uri } // { $0.external_urls.spotify }
+//                    if let firstURI = self?.trackURIs.first {
+//                        print("First track URI: \(firstURI)") // Print the first track URI
+//                        self?.firstTrackURI = firstURI // Also store it in firstTrackURI
+//                    } else {
+//                        self?.message = "No results found."
+//                        print("No track URIs found.")
+//                    }
+//                    print("Track URIs: \(self?.trackURIs ?? [])") // Print the track URIs
+//                }
+//            } catch {
+//                DispatchQueue.main.async {
+//                    self?.message = "Decoding error: \(error.localizedDescription)"
+//                }
+//            }
             
         }.resume()
     }
